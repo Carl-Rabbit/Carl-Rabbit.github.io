@@ -25,6 +25,11 @@
 
 .navbar-toggler > span {
     font-size: 0.8em;
+    color: black;
+}
+
+.navbar-toggler > .fa-bars:before {
+    color: black;
 }
 
 .navbar-toggler {
@@ -76,9 +81,12 @@ body > section {
     content: '';
     display: block;
     width: auto;
-    margin: 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
     height: 3px;
     background: #eeeeee;
+}
+.seminar-item:last-child:after {
+    margin: 1.5rem 0;
 }
 .news-page-item:before, .news-page-item:last-child:after {
     content: '';
@@ -185,16 +193,27 @@ body > section {
 }
 
 .news-date {
-    min-width: 100px;
     font-variant-numeric: tabular-nums;
 }
 
 @media screen and (max-width: 768px){
     .news-date {
+        margin-top: 10px;
+        text-align: left;
+    }
+
+    .news-date > p {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .seminar-date {
         text-align: left;
     }
 }
-@media only screen and (max-width: 760px) {
+
+@media only screen and (max-width: 768px) {
     .seminar-item{
         margin-left: 5px;
     }
@@ -215,9 +234,6 @@ body > section {
         text-align: right;
 
     }
-    .news-date {
-        width: 70%;
-    }
 }
 
 @media only screen and (min-width: 760px) {
@@ -229,9 +245,6 @@ body > section {
      }
     .narrow-top-header{
         display: none;
-        width: 100%;
-    }
-    .news-date {
         width: 100%;
     }
 }
@@ -418,14 +431,47 @@ body > section {
     height: 0;
     overflow:hidden;
     margin: 0;
-    position:relative;
+    position: relative;
 }
 
 .carousel-container img {
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+
+.icon-box {
+    margin-top: 10px;
+    padding: 0 20px;
+}
+
+.icon-box > p {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.icon-wrapper {
+    margin: auto;
+    max-width: 150px;
+}
+
+.icon-container {
+    width: 100%;
+    padding-bottom: 100%;
+    height: 0;
+    overflow:hidden;
+    margin: 0;
+    position: relative;
+}
+
+.icon-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 
