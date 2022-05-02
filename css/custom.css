@@ -360,6 +360,20 @@ body > section {
     height: 350px;
 }
 
+.btn-disabled,
+.btn-disabled:hover,
+.btn-disabled:link,
+.btn-disabled:focus,
+.btn-disabled:focus-visible,
+.btn-disabled:active,
+.btn-disabled:visited {
+    color: white;
+    background-color: #dadada;
+    border-color: #dadada;
+    user-select: none;
+    cursor: not-allowed;
+}
+
 .seminar-btn {
     border: none !important;
     border-bottom-color: #2b90d9;
