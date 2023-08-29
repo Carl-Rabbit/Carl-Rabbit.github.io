@@ -1,0 +1,81 @@
+{
+  projectId: 'bar-chart-0',
+  chart: './BarChartSVG.svg',
+  transcript: './army-military-comparison.json',
+  audio: './army-military-comparison.txt',
+  binder: {
+    from: "svg",
+    to: "gaia.chart.BarChart",
+    rules: [
+      {
+        from: "#x-domain",
+        to: ".XAxis .Domain"
+      },
+      {
+        from: "#y-domain",
+        to: ".YAxis .Domain"
+      },
+      {
+        from: ".bar:nth-of-type(1)",
+        to: ".Bar",
+        id: "bar-0",
+        data: {
+          value: 40
+        }
+      },
+      {
+        from: ".bar:nth-of-type(2)",
+        to: ".Bar",
+        id: "bar-1",
+        data: {
+          value: 50
+        }
+      },
+      {
+        from: "#label-0",
+        to: ".BarLabel",
+        data: {
+          value: 40
+        }
+      },
+      {
+        from: "#label-1",
+        to: ".BarLabel",
+        data: {
+          value: 50
+        }
+      }
+    ]
+  },
+  animation: {
+    targetType: 'BarChart',
+    params: {
+      dur: 4,
+    },
+    main: {
+      sync: [
+        {
+          ref: 'PathBlink',
+          target: '.Axis',
+          duration: '$dur',
+        },
+        {
+          ref: 'Fade',
+          target: [
+            { selectAll: '.Bar>*, .BarLabel>*' },
+            { filter: "@data.value == 40" },
+          ],
+          duration: '$dur',
+          offset: 2,
+        },
+        {
+          ref: 'Fade',
+          target: '.Bar>*[value="50"], .BarLabel>*[value="50"]',
+          duration: '$dur',
+          offset: 4,
+        }
+      ],
+    },
+  },
+  templates: []
+}
