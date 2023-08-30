@@ -3,6 +3,8 @@
     - [AniClass and AniUnit](#aniclass-and-aniunit)
     - [Attributes](#attributes)
   - [Target Selection](#target-selection)
+  - [Parameter Abstraction](#parameter-abstraction)
+  - [Data Binding](#data-binding)
   - [Animation Library](#animation-library)
     - [Fade \& Zoom](#fade--zoom)
     - [Wipe \& Grow \& Cut](#wipe--grow--cut)
@@ -191,6 +193,56 @@ This figure shows some concrete examples of the target selection.
 ![Target selection example](../figures/target_sel.png)
 
 Notice that the properties mounted on the group/element can be visited in the expressions via the alias shown in (b).
+
+## Parameter Abstraction
+
+*Gaia* allows users to declare parameters.
+They can be used as a local constant or function as an interface for a template.
+Here are some examples:
+  
+```json5
+"params": {
+  "offset": {
+    "type": "number",
+  },
+  "textEffect": "Fade",
+  // short for
+  // "textEffect": {
+  //   "type": "string",
+  //   "value": "Fade"
+  // },
+  "myValue": { 
+    "type": "string",   // for a template, the parameter is required if not set a default value
+  },
+}
+...
+{
+  "ref": "$textEffect",
+  "target": [
+    { "selectAll": ".AxisLabel text" },
+    { "filter": "@data.xVal == $myValue" },   // $myValue will be replaced with "<param value>" in the expression or CSS selector
+  ],
+  "offset": "$offset"
+}
+```
+
+*Gaia* will check the type and value of parameters when applying the template.
+
+## Data Binding
+
+*Gaia* can bind the data to mark elements, which can be used in the target selection.
+You can find the data in the binder spec.
+An example is shown below.
+
+```json line
+// bind to the corresponding bar, bar label and x-axis label
+{ "xVal": "RELEASED PRETRIAL", "yVal": 0.94 },
+{ "xVal": "RETURNED FOR EVERY COURT DATE", "yVal": 0.88 },
+{ "xVal": "NOT ARRESTED PRETRIAL", "yVal": 0.86 }
+```
+
+They are mounted to the attributes of the SVG elements and can be used in CSS selectors (e.g., `[xVal="RELEASED PRETRIAL"]`).
+When using expressions, they can also be accessed by `@data` (e.g., `@data.xVal`).
 
 ## Animation Library
 
