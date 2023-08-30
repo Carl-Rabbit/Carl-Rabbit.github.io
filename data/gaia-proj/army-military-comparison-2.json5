@@ -2,7 +2,7 @@
   projectId: 'army-military-comparison-2',
   chart: './army-military-comparison.svg',
   audio: './army-military-comparison.txt',
-  comment: 'start of tutorial 2',
+  comment: 'start of task 2',
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
@@ -57,19 +57,17 @@
       "name": "ShowCategory",
       "params": {
         "category": { "type": "string" },
-        "barLabelOffset": { "value": 1 },
-        "textEffect": { "value": "Cut" },
-        "barWipeFrom": { "value": "bottom" },
+        "barLabelOffset": 1,
       },
       "main": {
         "sync": [
           {
             "ref": "Wipe",
             "target": ".Bar rect[xVal=$category]",
-            "from": "$barWipeFrom",
+            "from": "bottom",
           },
           {
-            "ref": "$textEffect",
+            "ref": "Cut",
             "target": ".AxisLabel text[xVal=$category]"
           },
           {
@@ -77,7 +75,7 @@
             "target": ".AxisSymbol > *[xVal=$category]",  // here we use "> *" because the symbol might be a group that contains multiple elements
           },
           {
-            "ref": "$textEffect",
+            "ref": "Cut",
             "target": ".BarLabel text[xVal=$category]",
             "offset": "$barLabelOffset"
           },

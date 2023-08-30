@@ -2,7 +2,7 @@
   projectId: 'dc-courts-0',
   chart: './dc-courts.svg',
   audio: './dc-courts.txt',
-  comment: 'start of tutorial 1',
+  comment: 'start of task 1',
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
