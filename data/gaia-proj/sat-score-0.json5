@@ -91,7 +91,7 @@
         {
           ref: 'Grow',
           target: [
-            { selectAll: '.mark.bar' },
+            { filter: '.Bar' },
             { slice: [1, -1] }
           ],
           from: 'left',
@@ -113,24 +113,24 @@
         sync: [
           {
             ref: 'Cut',
-            target: '.Title > *',
+            target: '.Title',
             ease: 'power3.out'
           },
           {
             ref: 'Wipe',
-            target: '.Axis .Line',
+            target: '.Axis.Line',
             from: 'top',
             ease: 'power3.inOut',
             duration: 3,
           },
           {
             ref: 'Cut',
-            target: '.YAxis .Label',
+            target: '.YAxis.Label',
             offset: 1,
           },
           {
             ref: 'Cut',
-            target: '.XAxis .Label > *',
+            target: '.XAxis.Label',
             stagger: 0.15,
             offset: 2,
           }
@@ -146,30 +146,21 @@
         sync: [
           {
             ref: 'Circle',
-            target: [
-              { selectAll: '.XAxis .Label text' },
-              { filter: "@data.xVal == $incomeLabel" },
-            ],
+            target: '.XAxis.Label[xVal=$incomeLabel]',
             displayTime: 2,
             aniTime: 1.2,
             stroke: 'yellow',
           },
           {
             ref: 'Wipe',
-            target: [
-              { selectAll: '.mark.bar' },
-              { filter: "@data.xVal == $incomeLabel" },
-            ],
+            target: '.Bar[xVal=$incomeLabel]',
             from: 'left',
             duration: 2,
             offset: 3,
           },
           {
             ref: 'Cut',
-            target: [
-              { selectAll: '.mark.label' },
-              { filter: "@data.xVal == $incomeLabel" }
-            ],
+            target: '.BarLabel[xVal=$incomeLabel]',
             offset: 4
           },
         ]
@@ -181,11 +172,11 @@
         sync: [
           {
             ref: 'Fade',
-            target: '.Annotation .line',
+            target: '.Annotation.Line',
           },
           {
             ref: 'Cut',
-            target: '.Annotation .label',
+            target: '.Annotation.Label',
           },
         ]
       }

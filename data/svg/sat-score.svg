@@ -62,7 +62,7 @@
             </g>
             <g class="tick" opacity="1" transform="translate(0,254.04929577464787)">
                 <line stroke="currentColor" x2="0"></line>
-                <text x="-10" dy="0.32em" id="sat-score-x-label-5" class="scene chart sat-score axis x-axis label x-label-5 x-label" font-size="14" style="fill: rgb(85, 82, 78);">$140,000</text>
+                <text x="-10" dy="0.32em" id="sat-score-x-label-5" class="scene chart sat-score axis x-axis label x-label-5 x-label" font-weight="bold" font-size="14" style="fill: rgb(85, 82, 78);">$140,000</text>
             </g>
             <g class="tick" opacity="1" transform="translate(0,299.8239436619718)">
                 <line stroke="currentColor" x2="0"></line>

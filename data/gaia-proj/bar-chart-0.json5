@@ -1,8 +1,7 @@
 {
   projectId: 'bar-chart-0',
   chart: './BarChartSVG.svg',
-  transcript: './army-military-comparison.json',
-  audio: './army-military-comparison.txt',
+  audio: './empty.txt',
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
@@ -62,15 +61,15 @@
         {
           ref: 'Fade',
           target: [
-            { selectAll: '.Bar>*, .BarLabel>*' },
-            { filter: "@data.value == 40" },
+            { filter: '.Bar, .BarLabel' },
+            { filterExpr: "@data.value == 40" },
           ],
           duration: '$dur',
           offset: 2,
         },
         {
           ref: 'Fade',
-          target: '.Bar>*[value="50"], .BarLabel>*[value="50"]',
+          target: '.Bar[value="50"], .BarLabel[value="50"]',
           duration: '$dur',
           offset: 4,
         }

@@ -80,10 +80,10 @@
           ref: "MoveFrom",
           target: [
             {
-              selectAll: '.Bar > *, .BarLabel > *, .XAxis .Symbol > *',
+              filter: '.Bar, .BarLabel, .XAxis.Symbol',
             },
             {
-              filter: '@data.xVal == "China" || @data.xVal == "Japan"',
+              filterExpr: '@data.xVal == "China" || @data.xVal == "Japan"',
             }
           ],
           x: '-=128px',
@@ -113,16 +113,16 @@
           {
             ref: 'Zoom',
             target: [
-              { selectAll: '.XAxis .Symbol > *' },
-              { filter: "@data.xVal == $category" },
+              { filter: '.XAxis.Symbol' },
+              { filterExpr: "@data.xVal == $category" },
             ],
             ease: '$symbolEase',
           },
           {
             ref: 'Wipe',
             target: [
-              { selectAll: '.Bar > *' },
-              { filter: "@data.xVal == $category" },
+              { filter: '.Bar' },
+              { filterExpr: "@data.xVal == $category" },
             ],
             ease: '$barEase',
           },
@@ -131,8 +131,8 @@
 //            ref: 'Cut',
             type: 'in',
             target: [
-              { selectAll: '.BarLabel > *' },
-              { filter: "@data.xVal == $category" },
+              { filter: '.BarLabel' },
+              { filterExpr: "@data.xVal == $category" },
             ]
           }
         ],

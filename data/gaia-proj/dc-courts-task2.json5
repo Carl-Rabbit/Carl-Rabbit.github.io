@@ -2,6 +2,7 @@
   projectId: 'dc-courts-0',
   chart: './dc-courts.svg',
   audio: './dc-courts.txt',
+  comment: 'start of task 2',
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
@@ -44,66 +45,37 @@
     ]
   },
   animation: {
-    targetType: 'BarChart',
+    comments: [
+      'Task 2: Target Selection',
+      '1. Modify the target of last 3 AniUnits (*) in the list, selecting the bar, axis label and bar label at the top. Tips: You can use "filter", "filterExpr" with "@data", "at", etc.',
+      '2. Copy AniUnits * twice and set the target to the other two groups of elements.',
+      '3. Set offset to align the animations with the audio. Tips: key timestamps are 2, 5 and 8. Notice the delay of bar label entering.'
+    ],
     main: {
       sync: [
         {
-          ref: 'Cut',
-          target: '.Title',
-          ease: 'power3.out'
+          ref: "CutIn",
+          target: ".Title",
+          ease: "power3.out"
         },
         {
-          ref: 'ShowCategory',
-          category: 'RELEASED PRETRIAL',
+          ref: 'WipeIn',
+          target: '.Bar',
+          from: 'left',
           offset: 2,
         },
         {
-          ref: 'ShowCategory',
-          category: 'RETURNED FOR EVERY COURT DATE',
-          offset: 5,
+          ref: 'CutIn',
+          target: '.AxisLabel',
+          offset: 2,
         },
         {
-          ref: 'ShowCategory',
-          category: 'NOT ARRESTED PRETRIAL',
-          offset: 8,
-        },
+          ref: 'CutIn',
+          target: '.BarLabel',
+          offset: 3,
+        }
       ],
     },
   },
-  templates: [
-    {
-      name: 'ShowCategory',
-      params: {
-        category: { type: "string" },
-      },
-      main: {
-        sync: [
-          {
-            ref: 'Cut',
-            target: [
-              { filter: '.XAxis' },
-              { filterExpr: "@data.xVal == $category" }
-            ],
-            duration: 0.6,
-          },
-          {
-            ref: 'Wipe',
-            target: [
-              { filter: '.Bar' },
-              { filterExpr: "@data.xVal == $category" },
-            ],
-            from: 'left',
-          },
-          {
-            ref: 'Cut',
-            target: [
-              { filter: '.BarLabel' },
-              { filterExpr: "@data.xVal == $category" }
-            ],
-            offset: 1,
-          },
-        ]
-      }
-    },
-  ]
+  templates: []
 }

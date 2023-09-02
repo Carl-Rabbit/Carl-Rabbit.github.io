@@ -1,8 +1,7 @@
 {
   projectId: 'bar-chart-2',
   chart: './BarChartSVG.svg',
-  transcript: './army-military-comparison.json',
-  audio: './army-military-comparison.txt',
+  audio: './empty.txt',
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
@@ -76,10 +75,10 @@
             ref: 'Fade',
             target: [
               {
-                selectAll: '.Bar > *, .BarLabel > *'
+                filter: '.Bar, .BarLabel'
               },
               {
-                filter: "@data.value === 40"
+                filterExpr: "@data.value === 40"
               },
             ],
             duration: '$dur',

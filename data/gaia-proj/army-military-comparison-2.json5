@@ -63,20 +63,20 @@
         "sync": [
           {
             "ref": "Wipe",
-            "target": ".Bar rect[xVal=$category]",
+            "target": ".Bar[xVal=$category]",
             "from": "bottom",
           },
           {
             "ref": "Cut",
-            "target": ".AxisLabel text[xVal=$category]"
+            "target": ".AxisLabel[xVal=$category]"
           },
           {
             "ref": "Zoom",
-            "target": ".AxisSymbol > *[xVal=$category]",  // here we use "> *" because the symbol might be a group that contains multiple elements
+            "target": ".AxisSymbol[xVal=$category]",
           },
           {
             "ref": "Cut",
-            "target": ".BarLabel text[xVal=$category]",
+            "target": ".BarLabel[xVal=$category]",
             "offset": "$barLabelOffset"
           },
         ]

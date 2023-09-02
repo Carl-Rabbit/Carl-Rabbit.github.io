@@ -80,10 +80,10 @@
           ref: "MoveFrom",
           target: [
             {
-              selectAll: '.Bar > *, .BarLabel > *, .XAxis .Symbol > *',
+              filter: '.Bar, .BarLabel, .XAxis.Symbol',
             },
             {
-              filter: '@data.xVal == "China" || @data.xVal == "Japan"',
+              filterExpr: '@data.xVal == "China" || @data.xVal == "Japan"',
             }
           ],
           x: '-=128px',
@@ -118,20 +118,20 @@
         "sync": [
           {
             "ref": "Wipe",
-            "target": ".Bar rect[xVal=$category]",
+            "target": ".Bar[xVal=$category]",
             "from": "$barWipeFrom",
           },
           {
             "ref": "$textEffect",
-            "target": ".AxisLabel text[xVal=$category]"
+            "target": ".AxisLabel[xVal=$category]"
           },
           {
             "ref": "Zoom",
-            "target": ".AxisSymbol > *[xVal=$category]",  // here we use "> *" because symbol might be a group that contains multiple elements
+            "target": ".AxisSymbol[xVal=$category]",
           },
           {
             "ref": "$textEffect",
-            "target": ".BarLabel text[xVal=$category]",
+            "target": ".BarLabel[xVal=$category]",
             "offset": 1
           },
         ]
