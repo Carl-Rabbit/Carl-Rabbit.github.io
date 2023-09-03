@@ -47,7 +47,7 @@
   animation: {
     comments: [
       'Task 2: Target Selection',
-      '1. Modify the target of last 3 AniUnits (*) in the list, selecting the bar, axis label and bar label at the top. Tips: You can use "filter", "filterExpr" with "@data", "at", etc.',
+      '1. Modify the target of last 3 AniUnits (*) in the list, selecting the bar, axis label and bar label at the top. Tips: You can use the data in the element attributes.',
       '2. Copy AniUnits * twice and set the target to the other two groups of elements.',
       '3. Set offset to align the animations with the audio. Tips: key timestamps are 2, 5 and 8. Notice the delay of bar label entering.'
     ],
