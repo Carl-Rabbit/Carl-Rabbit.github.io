@@ -82,7 +82,7 @@
             ref: 'Cut',
             target: [
               { filter: '.XAxis' },
-              { filterExpr: "@data.xVal == $category" }
+              { filterExpr: "@data.xVal == '$category'" }
             ],
             duration: 0.6,
           },
@@ -90,7 +90,7 @@
             ref: 'Wipe',
             target: [
               { filter: '.Bar' },
-              { filterExpr: "@data.xVal == $category" },
+              { filterExpr: "@data.xVal == '$category'" },
             ],
             from: 'left',
           },
@@ -98,7 +98,7 @@
             ref: 'Cut',
             target: [
               { filter: '.BarLabel' },
-              { filterExpr: "@data.xVal == $category" }
+              { filterExpr: "@data.xVal == '$category'" }
             ],
             offset: 1,
           },

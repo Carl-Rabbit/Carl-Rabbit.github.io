@@ -122,16 +122,16 @@
         sync: [
           {
             ref: 'WipeIn',
-            target: '.Bar[xVal=$category]',
+            target: '.Bar[xVal="$category"]',
             from: 'left',
           },
           {
             ref: 'CutIn',
-            target: '.AxisLabel[xVal=$category]',
+            target: '.AxisLabel[xVal="$category"]',
           },
           {
             ref: 'CutIn',
-            target: '.BarLabel[xVal=$category]',
+            target: '.BarLabel[xVal="$category"]',
             offset: 1,
           }
         ]

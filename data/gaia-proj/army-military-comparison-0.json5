@@ -114,7 +114,7 @@
             ref: 'Zoom',
             target: [
               { filter: '.XAxis.Symbol' },
-              { filterExpr: "@data.xVal == $category" },
+              { filterExpr: "@data.xVal == '$category'" },
             ],
             ease: '$symbolEase',
           },
@@ -122,7 +122,7 @@
             ref: 'Wipe',
             target: [
               { filter: '.Bar' },
-              { filterExpr: "@data.xVal == $category" },
+              { filterExpr: "@data.xVal == '$category'" },
             ],
             ease: '$barEase',
           },
@@ -132,7 +132,7 @@
             type: 'in',
             target: [
               { filter: '.BarLabel' },
-              { filterExpr: "@data.xVal == $category" },
+              { filterExpr: "@data.xVal == '$category'" },
             ]
           }
         ],

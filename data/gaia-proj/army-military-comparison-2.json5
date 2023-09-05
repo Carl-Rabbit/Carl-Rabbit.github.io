@@ -63,20 +63,20 @@
         "sync": [
           {
             "ref": "Wipe",
-            "target": ".Bar[xVal=$category]",
+            "target": ".Bar[xVal='$category']",
             "from": "bottom",
           },
           {
             "ref": "Cut",
-            "target": ".AxisLabel[xVal=$category]"
+            "target": ".AxisLabel[xVal='$category']"
           },
           {
             "ref": "Zoom",
-            "target": ".AxisSymbol[xVal=$category]",
+            "target": ".AxisSymbol[xVal='$category']",
           },
           {
             "ref": "Cut",
-            "target": ".BarLabel[xVal=$category]",
+            "target": ".BarLabel[xVal='$category']",
             "offset": "$barLabelOffset"
           },
         ]
