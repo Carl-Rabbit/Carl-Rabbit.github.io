@@ -146,21 +146,21 @@
         sync: [
           {
             ref: 'Circle',
-            target: '.XAxis.Label[xVal=$incomeLabel]',
+            target: '.XAxis.Label[xVal="$incomeLabel"]',
             displayTime: 2,
             aniTime: 1.2,
             stroke: 'yellow',
           },
           {
             ref: 'Wipe',
-            target: '.Bar[xVal=$incomeLabel]',
+            target: '.Bar[xVal="$incomeLabel"]',
             from: 'left',
             duration: 2,
             offset: 3,
           },
           {
             ref: 'Cut',
-            target: '.BarLabel[xVal=$incomeLabel]',
+            target: '.BarLabel[xVal="$incomeLabel"]',
             offset: 4
           },
         ]

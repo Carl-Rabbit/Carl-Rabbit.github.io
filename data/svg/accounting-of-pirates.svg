@@ -131,15 +131,15 @@
                       transform="translate(-100, 0)"></path>
             </g>
             <g>
-                <text class="chart money_donut1 data-item legend label index-0" transform="translate(160,-60)"
-                      font-size="18" fill="#ADADAD" font-weight="bold" dx="-0.3em" style="text-anchor: middle;">
+                <text class="chart money_donut1 data-item legend label index-0" transform="translate(110,-60)"
+                      font-size="18" fill="#ADADAD" font-weight="bold" style="text-anchor: start;">
                     INVESTORS
                 </text>
-                <text class="chart money_donut1 data-item legend label index-1" transform="translate(160,-20)"
-                      font-size="18" fill="#ADADAD" font-weight="bold" style="text-anchor: middle;">PORT FEES
+                <text class="chart money_donut1 data-item legend label index-1" transform="translate(110,-20)"
+                      font-size="18" fill="#ADADAD" font-weight="bold" style="text-anchor: start;">PORT FEES
                 </text>
-                <text class="chart money_donut1 data-item legend label index-2" transform="translate(160,20)"
-                      font-size="18" fill="#ADADAD" font-weight="bold" dx="-0.58em" style="text-anchor: middle;">
+                <text class="chart money_donut1 data-item legend label index-2" transform="translate(110,20)"
+                      font-size="18" fill="#ADADAD" font-weight="bold" style="text-anchor: start;">
                     BOUNTIES
                 </text>
                 <rect class="chart money_donut1 data-item legend symbol shape index-0" width="60" height="27" y="0"

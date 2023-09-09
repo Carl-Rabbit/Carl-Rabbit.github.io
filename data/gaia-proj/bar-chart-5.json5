@@ -1,7 +1,8 @@
 {
-  projectId: 'bar-chart-0',
+  projectId: 'bar-chart-5',
   chart: './BarChartSVG.svg',
   audio: './empty.txt',
+  comments: "Test Foreach animation",
   binder: {
     from: "svg",
     to: "gaia.chart.BarChart",
@@ -59,19 +60,21 @@
           duration: '$dur',
         },
         {
-          ref: 'Fade',
-          target: [
-            { filter: '.Bar, .BarLabel' },
-            { filterExpr: "@data.value == 40" },
-          ],
-          duration: '$dur',
-          offset: 2,
-        },
-        {
-          ref: 'Fade',
-          target: '.Bar[value="50"], .BarLabel[value="50"]',
-          duration: '$dur',
-          offset: 4,
+          target: '.Bar, .Label',
+          groupBy: '@data.value',
+          foreach: {
+            sync: [
+              {
+                ref: 'WipeIn',
+                target: '.Bar'
+              },
+              {
+                ref: 'CutIn',
+                target: '.Label'
+              }
+            ]
+          },
+          stagger: 0.5,
         }
       ],
     },

@@ -29,7 +29,7 @@
         to: ".Legend .Label",
         dataList: [
           { label: "INVESTORS", value: 0.3 },
-          { label: "PORT \"FEES\"", value: 0.1 },
+          { label: "PORT FEES", value: 0.1 },
           { label: "BOUNTIES", value: 0.5 },
         ]
       },
@@ -38,7 +38,7 @@
         to: ".Legend .Symbol",
         dataList: [
           { label: "INVESTORS", value: 0.3 },
-          { label: "PORT \"FEES\"", value: 0.1 },
+          { label: "PORT FEES", value: 0.1 },
           { label: "BOUNTIES", value: 0.5 },
         ]
       },
@@ -47,7 +47,7 @@
         to: ".Legend .Symbol",
         dataList: [
           { label: "INVESTORS", value: 0.3 },
-          { label: "PORT \"FEES\"", value: 0.1 },
+          { label: "PORT FEES", value: 0.1 },
           { label: "BOUNTIES", value: 0.5 },
         ]
       },
@@ -66,12 +66,64 @@
           stagger: 0.02,
         },
         {
-          ref: 'Fade',
+          ref: 'Fly',
           target: '.PieMarkBackground',
-          offset: 0.5,
+        },
+        {
+          ref: 'PieCategoryEnter',
+          attrSelector: '[label="INVESTORS"]',
+          sweepAngle: 120,
+          offset: 2.5,
+        },
+        {
+          ref: 'PieCategoryEnter',
+          attrSelector: '[label="PORT FEES"]',
+          startAngle: 90,
+          sweepAngle: 60,
+          offset: 5.5,
+          duration: 1.5,
+        },
+        {
+          ref: 'PieCategoryEnter',
+          attrSelector: '[label="BOUNTIES"]',
+          startAngle: 120,
+          sweepAngle: 200,
+          offset: 10.5,
+          duration: 1.5
+        },
+        {
+          ref: 'Float',
+          target: '.Annotation',
+          offset: 14,
         }
       ],
     },
   },
-  templates: []
+  templates: [
+    {
+      name: 'PieCategoryEnter',
+      params: {
+        startAngle: 0,
+        sweepAngle: 360,
+        attrSelector: '',
+        legendFrom: 'right',
+      },
+      main: {
+        sync: [
+          {
+            ref: 'SectorWheel',
+            target: ".Sector$attrSelector",
+            centerTarget: '.Sector',
+            startAngle: '$startAngle',
+            sweepAngle: '$sweepAngle',
+          },
+          {
+            ref: 'Fly',
+            target: ".Legend$attrSelector",
+            from: '$legendFrom',
+          }
+        ]
+      }
+    }
+  ]
 }
